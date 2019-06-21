@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using ProgramOf.DataAccess;
 using MySql.Data.MySqlClient;
 
-
 namespace ProgramOf
 {
     public partial class FrmMasterBarang : Form, InSearch

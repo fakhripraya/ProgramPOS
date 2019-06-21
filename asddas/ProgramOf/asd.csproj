@@ -32,11 +32,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.15\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
@@ -65,6 +80,12 @@
     <Compile Include="DataAccess\ModFunction.cs" />
     <Compile Include="DataAccess\UtilityGlobal.cs" />
     <Compile Include="DataAccess\UtilityPassword.cs" />
+    <Compile Include="FrmAll_Cetak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAll_Cetak.Designer.cs">
+      <DependentUpon>FrmAll_Cetak.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCariData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +99,18 @@
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\InPos.cs" />
+    <Compile Include="LaporanRpt\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\FrmCtk_DailyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\FrmCtk_DailyReport.Designer.cs">
+      <DependentUpon>FrmCtk_DailyReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tabel\FrmMasterBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +150,21 @@
     <Compile Include="Transaksi\FrmSI_TrnPosDtl.Designer.cs">
       <DependentUpon>FrmSI_TrnPosDtl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAll_Cetak.resx">
+      <DependentUpon>FrmAll_Cetak.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCariData.resx">
       <DependentUpon>FrmCariData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaporanRpt\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\FrmCtk_DailyReport.resx">
+      <DependentUpon>FrmCtk_DailyReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tabel\FrmMasterBarang.resx">
       <DependentUpon>FrmMasterBarang.cs</DependentUpon>
@@ -166,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
